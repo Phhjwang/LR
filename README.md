@@ -4,7 +4,7 @@
 <!-- badges: start -->
 <!-- badges: end -->
 
-The goal of LR is to ...
+The goal of LR is to ...bulabulabula
 
 ## Installation
 
