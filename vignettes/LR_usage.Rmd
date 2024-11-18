@@ -1,0 +1,47 @@
+---
+title: "LR_usage"
+auther: "hongjian"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{LR_usage}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+  )
+library(LR)
+library(bench)
+```
+
+bula bula bula
+```{r setup}
+set.seed(2024)
+data <- data.frame(
+  x = rnorm(10),
+  y = 2 * rnorm(10) + 3
+)
+model <- my_lm(y ~ x, data)
+model$coefficients
+model$fitted.values
+```
+
+bula bula bula
+```{r}
+original_model <- lm(y~x, data)
+all.equal(model$coefficients, as.vector(coef(original_model)))
+```
+
+bula bula bula
+```{r}
+bench::mark(
+  model=my_lm(y ~ x, data = data),
+  original_model=lm(y~x, data = data),
+  check=FALSE
+)
+```
+
+
