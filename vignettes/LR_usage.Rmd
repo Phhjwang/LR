@@ -17,25 +17,24 @@ library(LR)
 library(bench)
 ```
 
-bula bula bula
 ```{r setup}
-set.seed(2024)
+set.seed(123)
 data <- data.frame(
-  x = rnorm(10),
-  y = 2 * rnorm(10) + 3
+  x = rnorm(20),
+  y = 5 * rnorm(20) -7
 )
 model <- my_lm(y ~ x, data)
 model$coefficients
 model$fitted.values
 ```
 
-bula bula bula
+
 ```{r}
 original_model <- lm(y~x, data)
 all.equal(model$coefficients, as.vector(coef(original_model)))
 ```
 
-bula bula bula
+
 ```{r}
 bench::mark(
   model=my_lm(y ~ x, data = data),

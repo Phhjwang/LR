@@ -1,11 +1,11 @@
 Package: LR
 Type: Package
-Title: What the Package Does (Title Case)
+Title: LinearRegression
 Version: 0.1.0
-Author: Who wrote it
-Maintainer: The package maintainer <yourself@somewhere.net>
-Description: More about what it does (maybe more than one line)
-    Use four spaces when indenting paragraphs within the Description.
+Author: Hongjian Wang
+Maintainer: Hongjian wang <phhjwang@umich.edu>
+Description: This function implements a basic linear regression model from scratch.
+ It calculates coefficients, residuals, and fitted values for the specified formula and dataset.
 License: GPL-3
 Encoding: UTF-8
 LazyData: true

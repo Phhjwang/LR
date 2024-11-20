@@ -10,11 +10,12 @@
 #' fit <- my_lm(mpg ~ wt + hp, data = mtcars)
 #' print(fit$coefficients)
 my_lm <- function(formula, data) {
-  model_matrix <- model.matrix(formula, data)
-  response <- model.response(model.frame(formula, data))
-  coefficients <- solve(t(model_matrix) %*% model_matrix) %*% t(model_matrix) %*% response
-  fitted_values <- model_matrix %*% coefficients
-  residuals <- response - fitted_values
-  return(list(coefficients = as.vector(coefficients), residuals = residuals, fitted.values = fitted_values))
+  matrix <- model.matrix(formula, data)
+  Y <- model.response(model.frame(formula, data))
+  coeff <- solve(t(matrix) %*% matrix) %*% t(matrix) %*% Y
+  fitted <- matrix %*% coeff
+  residuals <- Y - fitted
+  return(list(coefficients = as.vector(coeff), residuals = residuals, fitted.values = fitted))
 
 }
+

@@ -1,8 +1,8 @@
 test_that("test my LR", {
-  set.seed(2024)
+  set.seed(123)
   data <- data.frame(
-    x = rnorm(10),
-    y = 2 * rnorm(10) + 3
+    x = rnorm(20),
+    y = 5 * rnorm(20) -7
   )
 
   model <- my_lm(y ~ x, data)
